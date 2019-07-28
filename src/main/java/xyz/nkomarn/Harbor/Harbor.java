@@ -14,7 +14,7 @@ import xyz.nkomarn.Harbor.nms.NMSUtils;
 import xyz.nkomarn.Harbor.task.Timer;
 import xyz.nkomarn.Harbor.util.Config;
 import xyz.nkomarn.Harbor.util.Counters;
-import xyz.nkomarn.Harbor.util.Updater;
+// import xyz.nkomarn.Harbor.util.Updater;
 
 import java.util.ArrayList;
 import java.util.stream.Stream;
@@ -58,8 +58,8 @@ public class Harbor extends JavaPlugin {
             if (debug) Bukkit.getServer().getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&',
                     getConfig().getString("messages.miscellaneous.prefix")) + "Checking for new updates...");
             if (!prerelease) {
-                Updater updater = new Updater();
-                updater.check();
+                // Updater updater = new Updater();
+                // updater.check();
             }
         }
         if (prerelease) Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', getConfig().getString("messages.miscellaneous.prefix") + "&cThis Harbor version is a prerelease. Not everything is guaranteed to work correctly, but the plugin should at least be stable. "

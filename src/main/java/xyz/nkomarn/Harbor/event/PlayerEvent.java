@@ -12,7 +12,7 @@ import xyz.nkomarn.Harbor.Harbor;
 import xyz.nkomarn.Harbor.nms.NMSUtils;
 import xyz.nkomarn.Harbor.util.Config;
 import xyz.nkomarn.Harbor.util.Counters;
-import xyz.nkomarn.Harbor.util.Updater;
+// import xyz.nkomarn.Harbor.util.Updater;
 
 import java.util.ArrayList;
 
@@ -20,13 +20,13 @@ public class PlayerEvent implements Listener {
     private Config config = new Config();
     private NMSUtils nms = new NMSUtils();
     private Counters counters = new Counters();
-    private Updater updater = new Updater();
+    // private Updater updater = new Updater();
 
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
         Player p = e.getPlayer();
-        String json = "[{\"text\":\"[prefix]§7Hey there, Harbor [version] was released! \"},{\"text\":\"§7§oClick §7§ome §7§oto §7§oupdate!\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/harbor update\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"§a§l↑ §7Update Harbor.\"}}]";
-        if (p.isOp() && updater.check() && config.getBoolean("features.notifier")) nms.sendJSONMessage(p, json.replace("[version]", updater.getLatest()).replace("[prefix]", config.getString("messages.miscellaneous.prefix")).replace("&", "§"));
+        // String json = "[{\"text\":\"[prefix]§7Hey there, Harbor [version] was released! \"},{\"text\":\"§7§oClick §7§ome §7§oto §7§oupdate!\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/harbor update\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"§a§l↑ §7Update Harbor.\"}}]";
+        // if (p.isOp() && updater.check() && config.getBoolean("features.notifier")) nms.sendJSONMessage(p, json.replace("[version]", updater.getLatest()).replace("[prefix]", config.getString("messages.miscellaneous.prefix")).replace("&", "§"));
         Counters.activity.put(p, System.currentTimeMillis());
         if (p.isOp() && Harbor.prerelease) p.sendMessage(ChatColor.translateAlternateColorCodes('&',
                 config.getString("messages.miscellaneous.prefix") + "&cThis Harbor version is a prerelease. Not everything is guaranteed to work correctly, but the plugin should at least be stable. "
